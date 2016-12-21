@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C9F4A7A1E0AC61B00449B1D /* RecieptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9F4A791E0AC61B00449B1D /* RecieptViewController.swift */; };
+		2C9F4A7C1E0AC62300449B1D /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9F4A7B1E0AC62300449B1D /* DashboardViewController.swift */; };
+		2C9F4A7E1E0AC62A00449B1D /* InvoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9F4A7D1E0AC62A00449B1D /* InvoiceViewController.swift */; };
 		2CE0522A1E0A994B00371E2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE052291E0A994B00371E2F /* AppDelegate.swift */; };
-		2CE0522C1E0A994B00371E2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0522B1E0A994B00371E2F /* ViewController.swift */; };
+		2CE0522C1E0A994B00371E2F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0522B1E0A994B00371E2F /* LoginViewController.swift */; };
 		2CE0522F1E0A994B00371E2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CE0522D1E0A994B00371E2F /* Main.storyboard */; };
 		2CE052311E0A994B00371E2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CE052301E0A994B00371E2F /* Assets.xcassets */; };
 		2CE052341E0A994B00371E2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CE052321E0A994B00371E2F /* LaunchScreen.storyboard */; };
@@ -42,9 +45,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C9F4A791E0AC61B00449B1D /* RecieptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecieptViewController.swift; sourceTree = "<group>"; };
+		2C9F4A7B1E0AC62300449B1D /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		2C9F4A7D1E0AC62A00449B1D /* InvoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceViewController.swift; sourceTree = "<group>"; };
 		2CE052261E0A994B00371E2F /* DIYMobilePrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIYMobilePrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CE052291E0A994B00371E2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2CE0522B1E0A994B00371E2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2CE0522B1E0A994B00371E2F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2CE0522E1E0A994B00371E2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2CE052301E0A994B00371E2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CE052331E0A994B00371E2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -114,8 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				2CE052291E0A994B00371E2F /* AppDelegate.swift */,
-				2CE0526D1E0A99F500371E2F /* Views */,
 				2CE0525C1E0A998800371E2F /* CoreTypes */,
+				2CE0526D1E0A99F500371E2F /* Views */,
 				2CE052571E0A995900371E2F /* ViewControllers */,
 				2CE052581E0A996000371E2F /* StoryBoards */,
 				2CE052591E0A996700371E2F /* MediaAssets */,
@@ -145,7 +151,10 @@
 		2CE052571E0A995900371E2F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				2CE0522B1E0A994B00371E2F /* ViewController.swift */,
+				2CE0522B1E0A994B00371E2F /* LoginViewController.swift */,
+				2C9F4A791E0AC61B00449B1D /* RecieptViewController.swift */,
+				2C9F4A7B1E0AC62300449B1D /* DashboardViewController.swift */,
+				2C9F4A7D1E0AC62A00449B1D /* InvoiceViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -333,14 +342,17 @@
 			files = (
 				2CE052661E0A99C900371E2F /* Store.swift in Sources */,
 				2CE052681E0A99D700371E2F /* StoreSubscriber.swift in Sources */,
+				2C9F4A7E1E0AC62A00449B1D /* InvoiceViewController.swift in Sources */,
 				2CE052621E0A99BA00371E2F /* Middleware.swift in Sources */,
-				2CE0522C1E0A994B00371E2F /* ViewController.swift in Sources */,
+				2CE0522C1E0A994B00371E2F /* LoginViewController.swift in Sources */,
 				2CE0526C1E0A99EA00371E2F /* Subscription.swift in Sources */,
 				2CE0525E1E0A99A700371E2F /* Action.swift in Sources */,
 				2CE052601E0A99B300371E2F /* Reducer.swift in Sources */,
+				2C9F4A7C1E0AC62300449B1D /* DashboardViewController.swift in Sources */,
 				2CE0522A1E0A994B00371E2F /* AppDelegate.swift in Sources */,
 				2CE052641E0A99C500371E2F /* State.swift in Sources */,
 				2CE0526A1E0A99E200371E2F /* StoreType.swift in Sources */,
+				2C9F4A7A1E0AC61B00449B1D /* RecieptViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +595,7 @@
 				2CE052501E0A994B00371E2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2CE052511E0A994B00371E2F /* Build configuration list for PBXNativeTarget "DIYMobilePrototypeTests" */ = {
 			isa = XCConfigurationList;
@@ -591,6 +604,7 @@
 				2CE052531E0A994B00371E2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2CE052541E0A994B00371E2F /* Build configuration list for PBXNativeTarget "DIYMobilePrototypeUITests" */ = {
 			isa = XCConfigurationList;
@@ -599,6 +613,7 @@
 				2CE052561E0A994B00371E2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
