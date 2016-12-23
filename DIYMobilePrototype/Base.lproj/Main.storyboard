@@ -69,7 +69,7 @@
         <!--Item 2-->
         <scene sceneID="MOg-z7-tk9">
             <objects>
-                <viewController id="ng7-BO-V7a" sceneMemberID="viewController">
+                <viewController id="ng7-BO-V7a" customClass="DashboardViewController" customModule="DIYMobilePrototype" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ldO-eO-nIr"/>
                         <viewControllerLayoutGuide type="bottom" id="ETu-ie-L0F"/>
@@ -79,20 +79,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ACu-fP-TSz">
-                                <rect key="frame" x="16" y="28" width="343" height="139"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="167"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.85607593910000002" green="0.79703187129999997" blue="0.2384209662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eH5-mM-FUw">
-                                <rect key="frame" x="16" y="167" width="343" height="451"/>
+                                <rect key="frame" x="0.0" y="167" width="375" height="451"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="4BW-qD-lGK">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4BW-qD-lGK" id="Muq-Wy-kmb">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -102,6 +102,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="5is-to-9MI"/>
+                    <connections>
+                        <outlet property="tableView" destination="eH5-mM-FUw" id="NeZ-kV-alc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lsp-g3-vgy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
