@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+public typealias DispatchFunction = (Action) -> Any
+public typealias GetState = () -> StateType?
+public typealias Middleware = (DispatchFunction?,@escaping GetState) -> (@escaping DispatchFunction) -> DispatchFunction
