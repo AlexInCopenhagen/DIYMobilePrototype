@@ -27,7 +27,7 @@ public protocol StoreType {
     func subscribe<S: StoreSubscriber>(_ subscriber: S) where S.StoreSubscriberStateType == State
     func unsubscribe(_ subscriber: AnyStoreSubscriber)
     func dispatch(_ action: Action) -> Any
-    func dispatch(_ actionCreator: ActionCreator) -> Any
+    func dispatch(_ actionCreator: ActionCreator) -> Action?
     func dispatch(_ asyncActionCreator: AsyncActionCreator)
     func dispatch(_ asyncActionCreator: AsyncActionCreator, callback: DispatchCallback?)
 

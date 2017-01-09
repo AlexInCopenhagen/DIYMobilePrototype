@@ -8,6 +8,13 @@
 
 import Foundation
 
+
+private let typeKey = "type"
+private let payloadKey = "payload"
+private let isTypedActionKey = "isTypedAction"
+private let reSwiftNull = "Reswift_null"
+
+public struct ReSwiftInit: Action {}
 public struct StandardAction: Action {
     
     public let type: String
@@ -21,19 +28,21 @@ public struct StandardAction: Action {
     }
 }
 
+public protocol Action {}
+public protocol StandardActionConvertible: Action {
+    init(_ standardAction:StandardAction)
+    func toStandardAction() -> StandardAction
+}
 
 
 
 
-private let typeKey = "type"
-private let payloadKey = "payload"
-private let isTypedActionKey = "isTypedAction"
-let reSwiftNull = "Reswift_null"
 
 extension StandardAction: Coding {
     public init?(dictionary:[String:Any]) {
         guard let type = dictionary[typeKey] as? String,
             let isTypedAction = dictionary[isTypedActionKey] as? Bool else {return nil}
+        
         self.type = type
         self.payload = dictionary[payloadKey] as? [String:Any]
         self.isTypedAction = isTypedAction
@@ -49,11 +58,6 @@ extension StandardAction: Coding {
 }
 
 
-public protocol StandardActionConvertible: Action {
-    init(_ standardAction:StandardAction)
-    
-    func toStandardAction() -> StandardAction
-}
 
-public protocol Action {}
-public struct ReSwiftInit: Action {}
+
+

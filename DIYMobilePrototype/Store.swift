@@ -10,9 +10,18 @@ import Foundation
 
 open class Store<State: StateType>: StoreType {
     
-    typealias SubscriptionType = Subscription<State>
+                typealias SubscriptionType = Subscription<State>
+    public      typealias DispatchCallback = (State) -> Void
+    public      typealias ActionCreator = (_ state: State, _ store: Store) -> Action?
+    public      typealias AsyncActionCreator = (
+        _ state: State,
+        _ store: Store,
+        _ actionCreatorCallback: @escaping ((ActionCreator) -> Void)
+        ) -> Void
     
-
+    
+           var subscriptions: [SubscriptionType] = []
+    public var dispatchFunction: DispatchFunction!
     public var state: State! {
         didSet {
             subscriptions = subscriptions.filter { $0.subscriber != nil }
@@ -22,13 +31,10 @@ open class Store<State: StateType>: StoreType {
         }
     }
     
-    public var dispatchFunction: DispatchFunction!
-    
     private var reducer: Reducer<State>
-    
-    var subscriptions: [SubscriptionType] = []
-    
     private var isDispatching = false
+
+ 
     
     public required convenience init(reducer: @escaping Reducer<State>, state: State?) {
         self.init(reducer: reducer, state: state, middleware: [])
@@ -41,7 +47,6 @@ open class Store<State: StateType>: StoreType {
         ) {
         self.reducer = reducer
         
-        // Wrap the dispatch function with all middlewares
         self.dispatchFunction = middleware
             .reversed()
             .reduce({ [unowned self] action in
@@ -66,7 +71,6 @@ open class Store<State: StateType>: StoreType {
             print("Store subscriber is already added, ignoring.")
             return false
         }
-        
         return true
     }
     
@@ -102,7 +106,6 @@ open class Store<State: StateType>: StoreType {
         isDispatching = true
         let newState = reducer(action, state)
         isDispatching = false
-        
         state = newState
         
         return action
@@ -110,20 +113,18 @@ open class Store<State: StateType>: StoreType {
     
     @discardableResult
     open func dispatch(_ action: Action) -> Any {
-        let returnValue = dispatchFunction(action)
-        
-        return returnValue
+        return dispatchFunction(action)
     }
     
     @discardableResult
-    open func dispatch(_ actionCreatorProvider: @escaping ActionCreator) -> Any {
+    open func dispatch(_ actionCreatorProvider: @escaping ActionCreator) -> Action? {
         let action = actionCreatorProvider(state, self)
         
         if let action = action {
             dispatch(action)
         }
         
-        return action as Any
+        return action
     }
     
     open func dispatch(_ asyncActionCreatorProvider: @escaping AsyncActionCreator) {
@@ -142,13 +143,4 @@ open class Store<State: StateType>: StoreType {
         }
     }
     
-    public typealias DispatchCallback = (State) -> Void
-    
-    public typealias ActionCreator = (_ state: State, _ store: Store) -> Action?
-    
-    public typealias AsyncActionCreator = (
-        _ state: State,
-        _ store: Store,
-        _ actionCreatorCallback: @escaping ((ActionCreator) -> Void)
-        ) -> Void
-}
+  }

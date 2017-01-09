@@ -14,6 +14,7 @@ func withSpecificTypes<SpecificStateType, Action>(
     state genericStateType: StateType?,
     function: (_ action: Action, _ state: SpecificStateType?) -> SpecificStateType
     ) -> StateType {
+    
     guard let genericStateType = genericStateType else {
         return function(action, nil) as! StateType
     }
